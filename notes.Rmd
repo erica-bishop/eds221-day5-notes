@@ -1,5 +1,5 @@
 ---
-title: "Day 5 Notes"
+title: "Day 5 Notes: Functions"
 author: "Erica Bishop"
 date: "`r Sys.Date()`"
 output: html_document
@@ -8,4 +8,31 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+## Testing Functions
+
+-   informal testing in the console doesn't leave a record, so it becomes easy to break code that used to work
+-   to get around this, do a **unit test**
+
+**Unit Tests**
+-   in R, use a package called "testthat"
+-   testthat is supposed to make testing easy and "addictive"
+-   describe what you want a function to do
+Examples of unit tests build into testthat:
+-   expect_equal() does the function return expected values?
+-   expect_type() does the function return the expected type?
+-   expect_length() if a vector is returned, is it the expected length?
+-   expect_true() does the function return TRUE?
+
+If the unit test passes, nothing will happen
+If it **fails** then you'll get an error message
+
+
+
+
+
+
+
+
+
 
