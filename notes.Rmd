@@ -28,11 +28,51 @@ If the unit test passes, nothing will happen
 If it **fails** then you'll get an error message
 
 
+### Packages
+
+How do we find, vet, and use useful packages?
+
+Follow the checklist, especially if its not on CRAN or rOpenSci:
+-   look at list of updates on CRAN - how frequently / recently updated? 
+-   is it under active development? (might not want to use an immature package where things are still changing) but also active developers can be responsive to bugs and fixes
+-   recently updated
+-   documentation available - should have substantial documentation
+-   is it used and published in similar projects? (precedent set) (google it)
+-   Liscensing?
+-   semantics intuitive? (will the packages coding style / preferred syntax be easy for you to use?)
+-   functionality? does it do what you need it?
+-   arguments support your needs?
+-   what dependencies does the package have and are they reasonable? 
+
+Can also look at the package on github
+
+## Citing packages
+
+R in the roxygen template has a space for how to cite the package. can alse use `citation("package")` to find the citation
 
 
+## how to recase a character as numeric
 
+```{r}
 
+penguins_yr_chr <- penguins |> 
+  mutate(year = as.character(year))
 
+penguins_year_num <- penguins_yr_chr |> 
+  mutate(year = as.numeric(year))
 
+```
+
+Another quick example on subsetting:
+
+```{r}
+
+penguins_ad_ch <- penguins_year_num |> 
+  filter(species %in% c("Adelie", "Chinstrap"))
+
+```
+
+the %in% operator looks in each row to see if the variable in that row exists in the vector specified.
+this is VERY DIFFERENT from using ==
 
 
